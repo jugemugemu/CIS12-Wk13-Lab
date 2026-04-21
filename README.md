@@ -102,7 +102,7 @@ mindmap
 ### Testing `MindMapLeaf`
 1. **Create a file** named `test_mindmap_leaf.py` and add code to test your class:
    ```python
-   from mindmap_leaf import MindMapLeaf
+   from MindMapLeaf import MindMapLeaf
 
    # Step 5: Create a MindMapLeaf object and test the __str__ and display methods.
    leaf = MindMapLeaf("Jean-Luc Picard", "circle")
@@ -176,8 +176,8 @@ mindmap
 ### Testing `MindMapComposite`
 1. **Create a file** named `test_mindmap_composite.py` and write code to test your class:
    ```python
-   from mindmap_leaf import MindMapLeaf
-   from mindmap_composite import MindMapComposite
+   from MindMapLeaf import MindMapLeaf
+   from MindMapComposite import MindMapComposite
 
    # Step 6: Create MindMapComposite and MindMapLeaf objects to test
    root = MindMapComposite("Root", "circle")
@@ -199,63 +199,65 @@ mindmap
 ## Step 3: Creating the Main Program
 
 1. **Create a file** named `main.py` to display my mind map:
+
 ```python
 #!/usr/bin/env python3
-from mindmap_leaf import MindMapLeaf
-from mindmap_composite import MindMapComposite
+from MindMapLeaf import MindMapLeaf
+from MindMapComposite import MindMapComposite
+
 
 def main():
     if __name__ == "__main__":
         # Root of the mindmap
-        root = MindMapComposite( "The Battle at Wolf 359", "circle" )
+        root = MindMapComposite("The Battle at Wolf 359", "circle")
 
-        characters = MindMapComposite( "Characters", "oval" )
-        characters.add( MindMapLeaf( "Jean-Luc Picard / Locutus", "plain" ) )
-        characters.add( MindMapLeaf( "William Riker", "plain" ) )
-        characters.add( MindMapLeaf( "Data", "plain" ) )
-        characters.add( MindMapLeaf( "Worf", "plain" ) )
-        characters.add( MindMapLeaf( "Borg Queen (implied presence)", "plain" ) )
-        root.add( characters )
+        characters = MindMapComposite("Characters", "oval")
+        characters.add(MindMapLeaf("Jean-Luc Picard / Locutus", "plain"))
+        characters.add(MindMapLeaf("William Riker", "plain"))
+        characters.add(MindMapLeaf("Data", "plain"))
+        characters.add(MindMapLeaf("Worf", "plain"))
+        characters.add(MindMapLeaf("Borg Queen (implied presence)", "plain"))
+        root.add(characters)
 
-        plot_points = MindMapComposite( "Plot Points", "square" )
-        plot_points.add( MindMapLeaf( "Picard is assimilated by the Borg", "plain" ) )
-        plot_points.add( MindMapLeaf( "Riker takes command of the Enterprise", "plain" ) )
-        plot_points.add( MindMapLeaf( "The Federation fleet suffers heavy losses", "plain" ) )
-        plot_points.add( MindMapLeaf( "Enterprise crew devises a plan to stop the Borg", "plain" ) )
-        root.add( plot_points )
+        plot_points = MindMapComposite("Plot Points", "square")
+        plot_points.add(MindMapLeaf("Picard is assimilated by the Borg", "plain"))
+        plot_points.add(MindMapLeaf("Riker takes command of the Enterprise", "plain"))
+        plot_points.add(MindMapLeaf("The Federation fleet suffers heavy losses", "plain"))
+        plot_points.add(MindMapLeaf("Enterprise crew devises a plan to stop the Borg", "plain"))
+        root.add(plot_points)
 
-        themes = MindMapComposite( "Themes", "cloud" )
-        themes.add( MindMapLeaf( "Identity and loss of self", "plain" ) )
-        themes.add( MindMapLeaf( "Duty and leadership", "plain" ) )
-        themes.add( MindMapLeaf( "Humanity vs. technology", "plain" ) )
-        themes.add( MindMapLeaf( "Collectivism vs. individuality", "plain" ) )
-        root.add( themes )
+        themes = MindMapComposite("Themes", "cloud")
+        themes.add(MindMapLeaf("Identity and loss of self", "plain"))
+        themes.add(MindMapLeaf("Duty and leadership", "plain"))
+        themes.add(MindMapLeaf("Humanity vs. technology", "plain"))
+        themes.add(MindMapLeaf("Collectivism vs. individuality", "plain"))
+        root.add(themes)
 
-        setting = MindMapComposite( "Setting", "hexagon" )
-        setting.add( MindMapLeaf( "USS Enterprise-D", "plain" ) )
-        setting.add( MindMapLeaf( "Wolf 359 (space battle location)", "plain" ) )
-        setting.add( MindMapLeaf( "Borg Cube", "plain" ) )
-        setting.add( MindMapLeaf( "Starfleet Command (background communication)", "plain" ) )
-        root.add( setting )
+        setting = MindMapComposite("Setting", "hexagon")
+        setting.add(MindMapLeaf("USS Enterprise-D", "plain"))
+        setting.add(MindMapLeaf("Wolf 359 (space battle location)", "plain"))
+        setting.add(MindMapLeaf("Borg Cube", "plain"))
+        setting.add(MindMapLeaf("Starfleet Command (background communication)", "plain"))
+        root.add(setting)
 
-        conflicts = MindMapComposite( "Major Conflicts", "bang" )
-        conflicts.add( MindMapLeaf( "Federation vs. Borg (existential threat)", "plain" ) )
-        conflicts.add( MindMapLeaf( "Riker’s internal struggle as acting captain", "plain" ) )
-        conflicts.add( MindMapLeaf( "Enterprise's fight to save Picard from assimilation", "plain" ) )
-        root.add( conflicts )
+        conflicts = MindMapComposite("Major Conflicts", "bang")
+        conflicts.add(MindMapLeaf("Federation vs. Borg (existential threat)", "plain"))
+        conflicts.add(MindMapLeaf("Riker’s internal struggle as acting captain", "plain"))
+        conflicts.add(MindMapLeaf("Enterprise's fight to save Picard from assimilation", "plain"))
+        root.add(conflicts)
 
-        dialogue = MindMapComposite( "Dialogue Highlights", "oval" )
-        dialogue.add( MindMapLeaf( "“I am Locutus of Borg. Resistance is futile.”", "plain" ) )
-        dialogue.add( MindMapLeaf( "Riker: \"Mr. Worf, fire.\"", "plain" ) )
-        dialogue.add( MindMapLeaf( "Guinan advising Riker on letting go of Picard", "plain" ) )
-        root.add( dialogue )
+        dialogue = MindMapComposite("Dialogue Highlights", "oval")
+        dialogue.add(MindMapLeaf("“I am Locutus of Borg. Resistance is futile.”", "plain"))
+        dialogue.add(MindMapLeaf("Riker: \"Mr. Worf, fire.\"", "plain"))
+        dialogue.add(MindMapLeaf("Guinan advising Riker on letting go of Picard", "plain"))
+        root.add(dialogue)
 
-        stage_directions = MindMapComposite( "Significant Stage Directions", "square" )
-        stage_directions.add( MindMapLeaf( "Close-up of Picard’s face as Locutus", "plain" ) )
-        stage_directions.add( MindMapLeaf( "Panoramic view of the devastated fleet at Wolf 359", "plain" ) )
-        stage_directions.add( MindMapLeaf( "Enterprise maneuvering to evade the Borg", "plain" ) )
-        stage_directions.add( MindMapLeaf( "Tense bridge scenes as the crew works together", "plain" ) )
-        root.add( stage_directions )
+        stage_directions = MindMapComposite("Significant Stage Directions", "square")
+        stage_directions.add(MindMapLeaf("Close-up of Picard’s face as Locutus", "plain"))
+        stage_directions.add(MindMapLeaf("Panoramic view of the devastated fleet at Wolf 359", "plain"))
+        stage_directions.add(MindMapLeaf("Enterprise maneuvering to evade the Borg", "plain"))
+        stage_directions.add(MindMapLeaf("Tense bridge scenes as the crew works together", "plain"))
+        root.add(stage_directions)
 
         root.display()
 
